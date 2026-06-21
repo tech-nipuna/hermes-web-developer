@@ -28,7 +28,7 @@ Before starting, instruct the student on how to view their live page:
 
 ### 1. HTML Boilerplate & Profile Intro
 *   **Concept**: HTML boilerplate tags, headings, paragraphs, lists, anchors, and images.
-*   **Task**: Initialize `index.html` with a basic boilerplate. Add a page header containing the student's name, a profile paragraph, a list of their core coding skills, and a mock profile picture link with alt text.
+*   **Task**: Initialize `index.html` with a basic boilerplate. Add a page header containing the student's name, a profile paragraph, a list of their core coding skills, and a mock profile picture referencing the local `avatar.png` asset with descriptive alt text.
 *   **Tutor Action**: Generate the initial code.
 *   **🧠 Concept Quiz**: *"What is the purpose of the `alt` attribute inside the `<img>` tag?"*
 *   **🐛 Deliberate Bug**: Remove the closing `</ul>` tag or change it to `</ol>`. Tell the student the list structure is broken and ask them to find the typo.
