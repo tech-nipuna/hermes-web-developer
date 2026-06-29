@@ -1,0 +1,15 @@
+Build a full-featured, modern, visually stunning single-page hotel website for Hotel Vishnu Residency in Khammam, Telangana, India.
+
+Research data is at /home/pi/hotel-websites/hotels/hotel-vishnu-residency/research.md - read it first.
+
+Tech stack: React + Vite + Tailwind CSS + Three.js + Framer Motion. Use TypeScript.
+
+Key pages/sections: Hero with full-screen 3D-rotating geometric ambient scene (Three.js), About the hotel, Rooms & rates (grid cards with hover effects), Amenities (animated icon strip with Framer blur-in), Guest Reviews (carousel), Location & Google Maps embed, CTA/Booking form, Footer with socials.
+
+Color palette: warm orange (#ea580c) + be (#fef3c7) + brown (#78350f). Warm budget-hotel feel.
+
+Use high-quality Unsplash/Pexels images that match hospitality themes. Reference the research.md image URLs.
+
+Make it production-quality: responsive, accessible, fast. Build, run the dev server briefly to verify no build errors, then create a production build.
+
+Output: /home/pi/hotel-websites/hotels/hotel-vishnu-residency/site/

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #800020;
+  --color-ivory: #fefae0;
+  --color-gold: #c9a84c;
+  --color-cream: #faf7ef;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-body); }
+}

@@ -1,0 +1,61 @@
+Now run:
+  cd /home/pi/hotel-websites/hotels/SITE_NAME/site
+  npm install
+  npm install -D tailwindcss @tailwindcss/vite
+  npm install framer-motion three @react-three/fiber @react-three/drei lucide-react @types/three
+
+After installing, overwrite these files to build a full React hotel website.
+
+----- src/index.css -----
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #COLOR;
+}
+
+html { scroll-behavior: smooth; }
+
+----- src/main.tsx -----
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+----- src/App.tsx -----
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Rooms from './components/Rooms'
+import Amenities from './components/Amenities'
+import Reviews from './components/Reviews'
+import Location from './components/Location'
+import Booking from './components/Booking'
+import Footer from './components/Footer'
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      <Navbar />
+      <Hero />
+      <About />
+      <Rooms />
+      <Amenities />
+      <Reviews />
+      <Location />
+      <Booking />
+      <Footer />
+    </div>
+  )
+}
+
+export default App
+
+Create each component in src/components/. Each should be self-contained, using only framer-motion, lucide-react, and the brand color palette. NO three.js in individual components (keep Three.js only in ThreeScene.tsx imported by Hero). All imports from 'react' must be named (useState, useEffect, useRef) — never `import React`. All type annotations like framer-motion transition ease should use `as const`. Ref timer types should be `number | null`.
+
+Write all files, then run `npm run build` to verify the build passes. Fix any TS errors until build is clean.
