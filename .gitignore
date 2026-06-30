@@ -1,4 +1,10 @@
 node_modules/
 dist/
+dist-electron/
+backend/.venv/
+backend/.qa-screenshots/
 logs/
 prompts/
+*.log
+.DS_Store
+*.local
