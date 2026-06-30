@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build && tsc -p electron/tsconfig.json",
     "preview": "vite preview",
-    "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && tsc -p electron/tsconfig.json . && electron .\"",
+    "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && tsc -p electron/tsconfig.json && electron .\"",
     "electron:build": "npm run build && electron-builder"
   },
   "dependencies": {
