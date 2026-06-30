@@ -13,8 +13,11 @@ export interface QAEvent {
   avg_score?: number
   results?: PageResult[]
   error?: string
-  port?: number
   message?: string
+  port?: number
+  stdout?: string
+  stderr?: string
+  title?: string
 }
 
 export interface RuleIssue {
@@ -22,14 +25,17 @@ export interface RuleIssue {
   src?: string
   tag?: string
   text?: string
+  count?: number
   body_width?: number
   viewport?: number
+  message?: string
 }
 
 export interface AIResult {
   issues: AIIssue[]
   summary: string
   score: number
+  error?: string
 }
 
 export interface AIIssue {
@@ -56,6 +62,7 @@ export interface QAConfig {
   ai_provider: 'openrouter' | 'ollama'
   ai_model: string
   openRouterKey?: string
+  ollamaUrl?: string
   viewport_w: number
   viewport_h: number
 }

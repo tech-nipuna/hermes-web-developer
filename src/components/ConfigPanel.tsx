@@ -7,13 +7,18 @@ interface Props {
   setAiModel: (v: string) => void
   openRouterKey: string
   setOpenRouterKey: (v: string) => void
+  ollamaUrl: string
+  setOllamaUrl: (v: string) => void
 }
 
-export default function ConfigPanel({ aiProvider, setAiProvider, aiModel, setAiModel, openRouterKey, setOpenRouterKey }: Props) {
+export default function ConfigPanel({
+  aiProvider, setAiProvider, aiModel, setAiModel,
+  openRouterKey, setOpenRouterKey, ollamaUrl, setOllamaUrl
+}: Props) {
   return (
     <div className="space-y-4">
       <h3 className="text-sm font-medium text-gray-300 uppercase tracking-wider">AI Configuration</h3>
-      
+
       <div>
         <label className="block text-xs text-gray-400 mb-1">Provider</label>
         <div className="flex gap-2">
@@ -45,7 +50,7 @@ export default function ConfigPanel({ aiProvider, setAiProvider, aiModel, setAiM
           placeholder="Model name..."
         />
         {aiProvider === 'ollama' && (
-          <p className="text-xs text-gray-500 mt-1">E.g.: llava, bakllava, llama3.2-vision</p>
+          <p className="text-xs text-gray-500 mt-1">E.g.: llama3.2-vision, llava, bakllava</p>
         )}
         {aiProvider === 'openrouter' && (
           <p className="text-xs text-gray-500 mt-1">E.g.: openai/gpt-4o-mini, anthropic/claude-3-5-sonnet</p>
@@ -62,7 +67,20 @@ export default function ConfigPanel({ aiProvider, setAiProvider, aiModel, setAiM
             className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-blue-500"
             placeholder="sk-or-..."
           />
-          <p className="text-xs text-gray-500 mt-1">Or set OPENROUTER_API_KEY in ~/.hermes/.env</p>
+          <p className="text-xs text-gray-500 mt-1">sk-or-... format. Get key at openrouter.ai/keys</p>
+        </div>
+      )}
+
+      {aiProvider === 'ollama' && (
+        <div>
+          <label className="block text-xs text-gray-400 mb-1">Ollama URL</label>
+          <input
+            value={ollamaUrl}
+            onChange={(e) => setOllamaUrl(e.target.value)}
+            className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-blue-500"
+            placeholder="http://localhost:11434"
+          />
+          <p className="text-xs text-gray-500 mt-1">Make sure Ollama is running with a vision model pulled</p>
         </div>
       )}
     </div>
